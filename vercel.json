@@ -1,3 +1,10 @@
 {
-  "version": 2
+  "version": 2,
+  "builds": [
+    { "src": "photo-gallery_project/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "^/$", "dest": "photo-gallery_project/index.html" },
+    { "src": "/(.*)", "dest": "photo-gallery_project/$1" }
+  ]
 }
