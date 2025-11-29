@@ -6,6 +6,7 @@
   <title>Planets Gallery</title>
   <meta name="description" content="Browse planet images like Mercury, Venus, Earth, Mars and gas giants in a clean gallery.">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWM798NDQ3"></script>
@@ -19,28 +20,57 @@
     body {
       padding-top: 60px;
       padding-bottom: 60px;
-      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #1c2430 0%, #0e131b 70%), radial-gradient(700px 300px at 85% -120px, rgba(125,162,198,0.25) 0%, rgba(14,19,27,0) 70%);
+      background-blend-mode: overlay;
+      color: #e9ecef;
     }
-    .navbar-default { background-color: #343a40; border-color: transparent; }
-    .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a { color: #fff; }
+    .navbar-default { background-color: #20252e; border-color: transparent; }
+    .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a { color: #ecf0f1; }
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus { color: #ddd; background-color: transparent; }
     .carousel-inner > .item > img { width: 100%; max-height: 450px; object-fit: cover; }
     .carousel-caption { background-color: rgba(0,0,0,0.6); padding: 10px; margin-bottom: 25px; border-radius: 4px; }
     .page-header { margin-top: 30px; margin-bottom: 20px; text-align: center; }
     .thumbnail { border: none; padding: 0; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     .thumbnail img { height: 200px; width: 100%; object-fit: cover; }
-    footer.navbar-default { background-color: #343a40; color: #fff; }
+    footer.navbar-default { background-color: #20252e; color: #fff; }
+    .thumbnail { background-color: #2a2f3a; }
+    .thumbnail-caption, .page-header { color: #dfe6ee; }
+
+    .starfield {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      background-color: transparent;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 25% 15%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1.5px 1.5px at 75% 35%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1.5px 1.5px at 15% 65%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 61%);
+      background-repeat: no-repeat;
+      animation: twinkle 6s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to   { opacity: 1; }
+    }
   </style>
 </head>
 <body>
+  <div class="starfield"></div>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Planets Gallery</a>
+        <a class="navbar-brand" href="#"><i class="fa fa-camera-retro"></i> Planets Gallery</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="space.html">Space</a></li>
-        <li class="active"><a href="others.html">Others</a></li>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="space.html"><i class="fa fa-star"></i> Space</a></li>
+        <li class="active"><a href="others.html"><i class="fa fa-image"></i> Planets</a></li>
         <li><a href="thank-you.html"><i class="fa fa-check"></i> Thank You</a></li>
       </ul>
     </div>

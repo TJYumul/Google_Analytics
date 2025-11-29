@@ -6,6 +6,7 @@
   <title>Thank You</title>
   <meta name="description" content="Thank you page for confirming actions and tracking conversions via Google Analytics.">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWM798NDQ3"></script>
   <script>
@@ -17,32 +18,72 @@
     gtag('event', 'conversion', { 'send_to': 'G-XWM798NDQ3', 'event_category': 'engagement', 'event_label': 'thank_you_visit' });
   </script>
   <style>
-    body { padding-top: 80px; background-color: #f8f9fa; }
-    .panel { box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    body { padding-top: 80px; padding-bottom: 60px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg, #212733 0%, #12161d 70%), radial-gradient(800px 320px at 10% -120px, rgba(96,140,180,0.25) 0%, rgba(18,22,29,0) 70%); background-blend-mode: overlay; color: #e9ecef; }
+    .navbar-default { background-color: #20252e; border-color: transparent; }
+    .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a { color: #ecf0f1; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover { color: #bdc3c7; }
+    .page-header { border-bottom: 2px solid rgba(255,255,255,0.1); margin-top: 30px; padding-bottom: 10px; text-align: center; }
+    .panel { box-shadow: 0 6px 18px rgba(0,0,0,0.25); border: none; background-color: #2a2f3a; color: #dfe6ee; }
+    .panel-heading { background-color: #20252e; color: #fff; }
+    .lead { color: #d1dae3; }
+    .checkmark { font-size: 56px; color: #28a745; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    footer.navbar-default { background-color: #20252e; color: #fff; }
+
+    .starfield {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      background-color: transparent;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20% 15%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1.5px 1.5px at 70% 35%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1px 1px at 45% 85%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1.5px 1.5px at 12% 65%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 61%),
+        radial-gradient(1px 1px at 92% 70%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0) 61%);
+      background-repeat: no-repeat;
+      animation: twinkle 6s ease-in-out infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.5; }
+      to   { opacity: 1; }
+    }
   </style>
 </head>
 <body>
+  <div class="starfield"></div>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Photo Gallery</a>
+        <a class="navbar-brand" href="index.html"><i class="fa fa-camera-retro"></i> Photo Gallery</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="space.html">Space</a></li>
-        <li><a href="others.html">Others</a></li>
+        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="space.html"><i class="fa fa-star"></i> Space</a></li>
+        <li><a href="others.html"><i class="fa fa-image"></i> Others</a></li>
+        <li class="active"><a href="thank-you.html"><i class="fa fa-check"></i> Thank You</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
+    <div class="page-header">
+      <h3><i class="fa fa-check"></i> Thank You</h3>
+      <p class="text-muted">Your action was completed successfully.</p>
+    </div>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-          <div class="panel-heading"><h3 class="panel-title">Thank You!</h3></div>
-          <div class="panel-body">
-            <p>Your action was completed successfully. This page helps us measure conversions.</p>
-            <p><a class="btn btn-primary" href="index.html">Back to Home</a></p>
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-smile-o"></i> We Appreciate You!</h3>
+          </div>
+          <div class="panel-body text-center">
+            <p class="checkmark"><i class="fa fa-check-circle"></i></p>
+            <p class="lead">Thanks for visiting. This page also helps us measure conversions.</p>
+            <p>
+              <a class="btn btn-primary" href="index.html"><i class="fa fa-home"></i> Back to Home</a>
+              <a class="btn btn-default" href="space.html"><i class="fa fa-star"></i> Explore Space</a>
+            </p>
           </div>
         </div>
       </div>
