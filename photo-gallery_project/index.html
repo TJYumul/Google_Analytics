@@ -29,6 +29,7 @@
       width: 100%;
       height: 400px;
       object-fit: cover;
+      object-position: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .thumbnail {
@@ -47,11 +48,16 @@
     .thumbnail img {
       height: 200px;
       object-fit: cover;
+      object-position: center;
       border-radius: 4px 4px 0 0;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
+    .thumbnail:hover img { transform: scale(1.06) translateY(-3px); box-shadow: 0 10px 18px rgba(0,0,0,0.35); }
     .thumbnail .caption {
       padding: 15px;
       text-align: center;
+      background-color: #2a2f3a;
+      color: #dfe6ee;
     }
     .page-header { border-bottom: 2px solid rgba(255,255,255,0.1); margin-top: 30px; padding-bottom: 10px; }
     .carousel-caption {
@@ -73,16 +79,25 @@
       border-radius: 0;
       border: none;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      background-color: #ffffff;
-      color: #333333;
+      background-color: #2a2f3a;
+      color: #dfe6ee;
+    }
+    /* Uniform size for modal images */
+    .modal-body img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center;
     }
     .modal-header {
-      background-color: #343a40;
-      color: white;
+      background-color: #20252e;
+      color: #dfe6ee;
       border-radius: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .modal-footer {
-      background-color: #f8f9fa;
+      background-color: #20252e;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
     .photo-info p { color: #333333; }
     .navbar-default { background-color: #20252e; border-color: transparent; }
